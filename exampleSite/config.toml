@@ -1,0 +1,12 @@
+languageCode = "zh-cn"
+title = "Paper"
+theme = "hugo-theme-paper"
+baseURL = "http://localhost"
+themesDir = "../.."
+Paginate = 10
+summaryLength = 20
+googleAnalytics = "UA-128173663-1"
+disqusShortname = "zhiin"
+
+[permalinks]
+  posts = "/:slug/"

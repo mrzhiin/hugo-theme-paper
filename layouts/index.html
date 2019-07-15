@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<div class="posts">
+  {{ range.Paginator.Pages }}
+  <article class="post">
+    <header class="header">
+      <div class="tags">
+        <div class="tag">
+          <span class="icon">
+            <span class="iconfont iconcalendar"></span>
+          </span>
+          <span class="label">
+            {{ .Date.Format "2006-01-02" }}
+          </span>
+        </div>
+      </div>
+      <a href="{{ .RelPermalink }}">
+        <h1 class="title">{{ .Title }}</h1>
+      </a>
+    </header>
+    <main class="mainer">
+      {{ .Summary }}
+    </main>
+    <div class="action">
+      <a href="{{ .RelPermalink }}" class="button">
+        <span class="iconfont icondots-horizontal"></span>
+      </a>
+    </div>
+  </article>
+  {{ end }}
+</div>
+
+{{ partial "pagination.html" . }}
+
+{{ end }}

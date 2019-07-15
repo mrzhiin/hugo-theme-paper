@@ -1,0 +1,119 @@
+// post
+.post {
+  padding: 0 16px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: -8px 0 8px -8px #cecece;
+  margin-bottom: 16px;
+  > .header {
+    .tags {
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+      .tag {
+        $h: 24px;
+        padding: 4px;
+        background: #f5f5f5;
+        width: min-content;
+        white-space: nowrap;
+        height: $h;
+        $r: 16px;
+        border-radius: $r $r;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon {
+          width: $h;
+          height: $h;
+          box-sizing: border-box;
+          background: #ffffff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .label {
+          margin: 0 8px;
+          font-weight: 500;
+        }
+      }
+    }
+    .title {
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: normal;
+    }
+  }
+  > .mainer {
+    font-size: 14px;
+    line-height: 2;
+    $b: #f5f5f5;
+    margin-top: 32px;
+    a {
+      color: #03a9f4;
+    }
+    code {
+      background: $b;
+      border-radius: 4px;
+      padding: 4px 8px;
+      box-decoration-break: clone;
+    }
+    blockquote {
+      padding: 24px 16px;
+      margin: 16px 0px;
+      border-left: 6px solid #aed581;
+      background: $b;
+    }
+    pre {
+      font-size: 14px;
+      padding: 24px 16px;
+      border-left: 6px solid #e0e0e0;
+      background-color: $b;
+      word-break: break-word;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      overflow: auto;
+      code {
+        all: unset;
+      }
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+    }
+  }
+  > .action {
+    margin: 16px 0;
+    display: flex;
+    justify-content: flex-end;
+    .button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      border-radius: 4px;
+      height: 36px;
+      min-width: 32px;
+      box-sizing: content-box;
+      padding: 0 16px;
+      transition: $transition;
+      background: #fff;
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
+  }
+  > .comment {
+    margin: 16px auto;
+    border-top: solid 2px $color2;
+    padding-top: 16px;
+  }
+}

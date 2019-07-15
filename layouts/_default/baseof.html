@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit" />
+    <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `
+    <link rel="%s" type="%s" href="%s" title="%s" />
+    ` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+    {{ end -}}
+    {{ $style := resources.Get "style/main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+    {{ template "_internal/google_analytics_async.html" . }}
+  </head>
+  <body class="layout ">
+    <aside class="asider">
+      <div class="content">
+        <a class="title" href="/">{{ .Site.Title }}</a>
+        <div class="links">
+          {{ with .OutputFormats.Get "RSS" }}
+          {{ if .RelPermalink }}
+          <a href="{{.RelPermalink}}" class="link" target="_blank">
+            <span class="iconfont iconrss"></span>
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </aside>
+    <div class="container">
+      <input class="anchor" id="anchor" readonly />
+      <main class="mainer">
+        {{ block "main" . }}
+        {{ end }}
+      </main>
+      <footer class="footer">
+        Theme By
+        <a href="https://github.com/mrzhiin/hugo-theme-paper" target="_blank"
+          >Paper</a
+        >
+      </footer>
+    </div>
+    <label class="top" for="anchor">
+      <span class="iconfont iconchevron-up"></span>
+    </label>
+  </body>
+</html>

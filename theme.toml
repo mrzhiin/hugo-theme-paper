@@ -1,0 +1,12 @@
+name = "Paper"
+license = "MIT"
+licenselink = "https://github.com/mrzhiin/hugo-theme-paper/blob/master/LICENSE"
+description = ""
+homepage = "https://github.com/mrzhiin/hugo-theme-paper"
+tags = ["blog"]
+features = []
+min_version = "0.41"
+
+[author]
+  name = "MrZhiin"
+  homepage = "https://www.zhiin.net"

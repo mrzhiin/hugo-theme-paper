@@ -1,0 +1,189 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  > .asider {
+    position: relative;
+    z-index: 1;
+    min-height: 64px;
+    background: #fff;
+    width: calc(32px * 7);
+    box-sizing: content-box;
+    padding: 0 16px;
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.06);
+    > .content {
+      margin: auto;
+      display: grid;
+      align-items:center;
+      grid-gap: 16px;
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr;
+      .title {
+        font-size: 32px;
+      }
+      .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .link {
+          $w: 32px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 8px;
+          width: $w;
+          height: $w;
+          border-radius: 50%;
+          font-size: 24px;
+          color: #fff;
+          background: $color2;
+        }
+      }
+    }
+  }
+
+  > .container {
+    flex: 1;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    // margin-right: -1px;
+    position: relative;
+    scrollbar-width: thin;
+    > .anchor {
+      height: 0;
+      width: 0;
+      outline: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      position: absolute;
+      // visibility: hidden;
+    }
+
+    > .mainer {
+      padding-top: 24px;
+      flex: 1;
+      width: 90%;
+      margin: auto;
+
+      > .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        user-select: none;
+        li {
+          list-style: none;
+          a {
+            outline: none;
+            margin: 0 8px;
+            border-radius: 50%;
+            background: #fff;
+            color: currentColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+              0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+            transition: $transition;
+            &.active,
+            &:hover {
+              background: $color2;
+              color: #fff;
+            }
+            &.number {
+              $w: 32px;
+              width: $w;
+              height: $w;
+            }
+            &.direction {
+              $w: 40px;
+              width: $w;
+              height: $w;
+            }
+          }
+        }
+      }
+    }
+
+    > .footer {
+      padding: 16px;
+      // margin-top: 16px;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  > .top {
+    outline: none;
+    cursor: pointer;
+    $w: 40px;
+    width: $w;
+    height: $w;
+    font-size: 24px;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition;
+    background: #fff;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    &:hover {
+      background: $color2;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 812px) {
+  .layout {
+    flex-direction: column;
+    > .asider {
+      width: unset;
+      .content {
+        width: 100%;
+        grid-template-columns: 1fr min-content;
+        grid-template-rows: 1fr;
+        .title {
+          flex: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-size: 24px;
+        }
+      }
+    }
+
+    > .container {
+      > .mainer {
+        > .pagination {
+          li {
+            &.range {
+              display: none;
+            }
+            a {
+              &.number {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

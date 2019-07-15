@@ -1,0 +1,27 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="post">
+  <header class="header">
+    <div class="tags">
+      <div class="tag">
+        <span class="icon">
+          <span class="iconfont iconcalendar"></span>
+        </span>
+        <span class="label">
+          {{ .Date.Format "2006-01-02" }}
+        </span>
+      </div>
+    </div>
+    <h1 class="title">{{ .Title }}</h1>
+  </header>
+  <main class="mainer">
+    {{ .Content }}
+  </main>
+  {{ if .Site.DisqusShortname}}
+  <section class="comment">
+    {{ template "_internal/disqus.html" . }}
+  </section>
+  {{ end }}
+</div>
+{{ end }}
