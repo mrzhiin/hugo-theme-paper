@@ -1,11 +1,21 @@
 // post
-.post {
+
+.post-wrap {
   padding: 0 16px;
   background: #fff;
   overflow: hidden;
   border-radius: 4px;
   box-shadow: -8px 0 8px -8px #cecece;
   margin-bottom: 16px;
+
+  > .comment {
+    margin: 16px auto;
+    border-top: solid 2px $color2;
+    padding-top: 16px;
+  }
+}
+
+.post {
   > .header {
     .tags {
       display: flex;
@@ -110,10 +120,5 @@
         background: #f5f5f5;
       }
     }
-  }
-  > .comment {
-    margin: 16px auto;
-    border-top: solid 2px $color2;
-    padding-top: 16px;
   }
 }
