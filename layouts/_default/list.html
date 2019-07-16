@@ -1,11 +1,11 @@
 {{ define "main" }}
 
 <ul class="list">
-  <!-- {{ range.Paginator.Pages }} -->
+  {{ range.Paginator.Pages -}}
   <li class="item">
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
   </li>
-  <!-- {{ end }} -->
+  {{ end -}}
 </ul>
 
 {{ partial "pagination.html" . }}
