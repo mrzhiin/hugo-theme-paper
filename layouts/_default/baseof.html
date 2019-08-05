@@ -18,36 +18,38 @@
     {{ .Site.Params.headerHtml | safeHTML }}
     {{ end -}}
   </head>
-  <body class="layout ">
-    <aside class="asider">
-      <div class="content">
-        <a class="title" href="/">{{ .Site.Title }}</a>
-        <div class="links">
-          {{ with .OutputFormats.Get "RSS" }}
-          {{ if .RelPermalink }}
-          <a href="{{.RelPermalink}}" class="link" target="_blank">
-            <span class="iconfont iconrss"></span>
-          </a>
-          {{ end }}
-          {{ end }}
+  <body>
+    <div class="layout">
+      <aside class="asider">
+        <div class="content">
+          <a class="title" href="/">{{ .Site.Title }}</a>
+          <div class="links">
+            {{ with .OutputFormats.Get "RSS" }}
+            {{ if .RelPermalink }}
+            <a href="{{.RelPermalink}}" class="link" target="_blank">
+              <span class="iconfont iconrss"></span>
+            </a>
+            {{ end }}
+            {{ end }}
+          </div>
         </div>
+      </aside>
+      <div class="container">
+        <input class="anchor" id="anchor" readonly />
+        <main class="mainer">
+          {{ block "main" . }}
+          {{ end }}
+        </main>
+        <footer class="footer">
+          Theme By
+          <a href="https://github.com/mrzhiin/hugo-theme-paper" target="_blank"
+            >Paper</a
+          >
+        </footer>
       </div>
-    </aside>
-    <div class="container">
-      <input class="anchor" id="anchor" readonly />
-      <main class="mainer">
-        {{ block "main" . }}
-        {{ end }}
-      </main>
-      <footer class="footer">
-        Theme By
-        <a href="https://github.com/mrzhiin/hugo-theme-paper" target="_blank"
-          >Paper</a
-        >
-      </footer>
+      <label class="top" for="anchor">
+        <span class="iconfont iconchevron-up"></span>
+      </label>
     </div>
-    <label class="top" for="anchor">
-      <span class="iconfont iconchevron-up"></span>
-    </label>
   </body>
 </html>
