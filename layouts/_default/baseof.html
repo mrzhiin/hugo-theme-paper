@@ -11,7 +11,7 @@
     <link rel="%s" type="%s" href="%s" title="%s" />
     ` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
     {{ end -}}
-    {{ $style := resources.Get "style/main.scss" | toCSS | minify | fingerprint }}
+    {{ $style := resources.Get "style/index.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     {{ template "_internal/google_analytics_async.html" . }}
     {{ if .Site.Params.headerHtml }}

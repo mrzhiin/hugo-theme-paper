@@ -1,9 +1,9 @@
 .list {
   padding: 0 16px 0 40px;
-  background: #fff;
+  background: var(--color1);
   overflow: hidden;
   border-radius: 4px;
-  box-shadow: -8px 0 8px -8px #cecece;
+  box-shadow: -8px 0 8px -8px var(--shadow);
   margin-bottom: 16px;
   .item {
     margin: 16px auto;

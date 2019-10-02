@@ -3,8 +3,8 @@ html {
 }
 body {
   scroll-behavior: smooth;
-  background: #fafafa;
-  color: $color2;
+  background: var(--bg);
+  color: var(--color2);
   font-size: 14px;
   font-family: Arial, "Hiragino Sans GB", 冬青黑, "Microsoft YaHei", 微软雅黑,
     SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
@@ -20,11 +20,8 @@ a {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f0f0f0;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cdcdcd;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #a6a6a6;
+  background: var(--color2);
 }

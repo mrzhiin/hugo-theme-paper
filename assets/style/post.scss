@@ -1,16 +1,14 @@
-// post
-
 .post-wrap {
   padding: 0 16px;
-  background: #fff;
+  background: var(--color1);
   overflow: hidden;
   border-radius: 4px;
-  box-shadow: -8px 0 8px -8px #cecece;
+  box-shadow: -8px 0 8px -8px var(--shadow);
   margin-bottom: 16px;
 
   > .comment {
     margin: 16px auto;
-    border-top: solid 2px $color2;
+    border-top: solid 2px var(--color2);
     padding-top: 16px;
   }
 }
@@ -24,7 +22,7 @@
       .tag {
         $h: 24px;
         padding: 4px;
-        background: #f5f5f5;
+        background: var(--color3);
         width: min-content;
         white-space: nowrap;
         height: $h;
@@ -38,7 +36,7 @@
           width: $h;
           height: $h;
           box-sizing: border-box;
-          background: #ffffff;
+          background: var(--color1);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -59,13 +57,12 @@
   > .mainer {
     font-size: 14px;
     line-height: 2;
-    $b: #f5f5f5;
     margin-top: 32px;
     a {
       color: #03a9f4;
     }
     code {
-      background: $b;
+      background: var(--color3);
       border-radius: 4px;
       padding: 4px 8px;
       box-decoration-break: clone;
@@ -74,13 +71,13 @@
       padding: 24px 16px;
       margin: 16px 0px;
       border-left: 6px solid #aed581;
-      background: $b;
+      background: var(--color3);
     }
     pre {
       font-size: 14px;
       padding: 24px 16px;
       border-left: 6px solid #e0e0e0;
-      background-color: $b;
+      background-color: var(--color3);
       word-break: break-word;
       word-wrap: break-word;
       white-space: pre-wrap;
@@ -110,14 +107,14 @@
       min-width: 32px;
       box-sizing: content-box;
       padding: 0 16px;
-      transition: $transition;
-      background: #fff;
+      transition: var(--transition);
+      background: var(--color1);
       user-select: none;
       display: flex;
       justify-content: center;
       align-items: center;
       &:hover {
-        background: #f5f5f5;
+        background: var(--color3);
       }
     }
   }

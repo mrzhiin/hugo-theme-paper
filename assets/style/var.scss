@@ -1,3 +1,15 @@
-$transition: 0.3s cubic-bezier(0, 0, 0.2, 1);
-$color1: #1867c0;
-$color2: #555555;
+html {
+  --transition: 0.3s cubic-bezier(0, 0, 0.2, 1);
+  --color1: #ffffff;
+  --color2: #555555;
+  --color3: #fafafa;
+  --bg: #fafafa;
+  --shadow: rgba(17, 17, 17, 0.06);
+  @media (prefers-color-scheme: dark) {
+    --color1: #1e1e1e;
+    --color2: #ffffff;
+    --color3: #121212;
+    --bg: #121212;
+    --shadow: transparent;
+  }
+}
