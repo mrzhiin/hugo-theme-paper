@@ -92,6 +92,29 @@
       margin-right: auto;
       max-width: 100%;
     }
+    table {
+      width: 100%;
+      overflow: auto;
+      border-collapse: collapse;
+      display: block;
+      thead {
+        border-bottom: solid 2px var(--color2);
+        border-top: 2px solid var(--color2);
+        th {
+          text-align: inherit;
+        }
+      }
+      tbody {
+        border-top: solid 1px var(--color2);
+        td {
+          border-bottom: 1px solid var(--color2);
+        }
+      }
+      th,
+      td {
+        padding: 0.75rem;
+      }
+    }
   }
   > .action {
     margin: 16px 0;
