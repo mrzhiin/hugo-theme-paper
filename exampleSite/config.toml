@@ -5,8 +5,8 @@ baseURL = "http://localhost"
 themesDir = "../.."
 Paginate = 10
 summaryLength = 20
-googleAnalytics = "UA-128173663-1"
-disqusShortname = "zhiin"
+googleAnalytics = ""
+disqusShortname = ""
 
 [params]
   headerHtml = '<script>console.log("headerHtml");</script>'
